@@ -31,3 +31,9 @@ docs/*/*.log
 docs/*/*.out
 docs/*/*.pdf
 docs/*/*/*.el
+
+## Big files
+eval/enforcement/benchmarks/ic/enfguard/logs/*
+eval/enforcement/benchmarks/nokia/enfguard/logs/*
+eval/enforcement/benchmarks/agg/enfguard/logs/*
+eval/enforcement/benchmarks/cluster/enfguard/logs/*

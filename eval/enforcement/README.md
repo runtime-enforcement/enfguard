@@ -1,19 +1,36 @@
-# README: Replication instructions
+# Replication instructions
 
-This document describes how to reproduce the empirical evaluation presented in Section 6 and Appendix D of
+This document describes the steps needed to reproduce the empirical evaluation presented in Section 5 of
 
-Hublet, F., Lima, L., Basin, D., Krstić, S., & Traytel, D. (2024). Proactive Real Time First-Order Enforcement. *CAV'24*.
+Hublet, F., Lima, L., Basin, D., Krstić, S., & Traytel, D. (2025). Scaling Up Proactive Enforcement. *CAV'25*.
 
-## Step 0. Requirements and preparation.
+## Step 0: Requirements and preparation
 
-The configuration used for our experiments was as follows:
+Indicative duration: 5 minutes. (TODO: Double check this)
 
-  * Processor: Intel i5-1135G7, 2.4 GHz
-  * RAM: 32 GB
-  * OS: Ubuntu 20.04.6
-  * Python 3.8.10
+The configuration used for our experiments was the following:
 
-Follow the instructions in the [main README file](https://github.com/runtime-enforcement/whyenf) at the root of this repository to install WhyEnf.
+  * Processor: AMD Ryzen™ 5 5600X, with 6 cores and 3.7 GHz
+  * RAM: 16 GB
+  * OS: Ubuntu 22.04
+  * Python 3.8.10 (TODO: Double check this)
+
+From the extracted `enfguard-artifact` folder, run
+
+```
+docker build -t enfguard:artifact .
+```
+
+to build EnfGuard's image. Expect this to take a considerable
+amount of time.
+
+Next, run
+
+```
+docker run -it enfguard:artifact
+```
+
+to access the container.
 
 Then open a terminal at the root of the repository and execute
 
@@ -24,29 +41,11 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-## Step 1 (optional). Preprocessing the log from Debois & Slaats (2015).
+## Step 1 (Optional): Smoke Test
 
-Indicative duration: < 1 minute.
+Indicative duration: < 1 minute. (TODO: Double check this)
 
-You can run 
-
-```
-python3 preprocess.py
-```
-
-to preprocess the raw log published by Debois & Slaats (2015) as specified by Arfelt et al. (2019) into the format used for our experiments.
-
-The original csv file can be found at `examples/debois_slaats_2015.csv`.
-
-If you set the constant `REPEATABLE` in `process.py` to `False`, this preprocesses the raw log for direct feeding into an enforcer. The preprocessed file is written to `examples/arfelt_et_al_2019.log`.
-
-If you set the constant `REPEATABLE` in `process.py` to `True`, this preprocesses the raw log for usage by our repeater script (see below). The preprocessed file is written to `examples/arfelt_et_al_2019_repeatable.log`.
-
-Note that we provide that the two preprocessed logs are already provided at the desired location in the repository.
-
-## Step 2. Reproducing the type checking decisions for RQ1.
-
-Indicative duration: < 1 minute.
+-----------------
 
 You can type
 
@@ -66,11 +65,11 @@ This experiment will use the following files:
 
 Indicative duration: 1-3 hours.
 
-You can run 
+You can run
 ```
 python3 evaluate_rq2.py option [-e EXECUTABLE_PATH] [-g] [-s]
 ```
-to run the performance measurements for RQ2-3 described in Section 7 and Appendix D and generate the corresponding graphs. 
+to run the performance measurements for RQ2-3 described in Section 7 and Appendix D and generate the corresponding graphs.
 
 The options are as follows:
 
@@ -86,8 +85,8 @@ The experiments will use the following files:
   * The logs and signature file, as before;
   * The formulae in `examples/formulae_{tool}/`, where `{tool}` is one of `enfpoly`, `whyenf`, or `whymon`. The formulae in each of these folders adhere to the input grammar of the corresponding tool.
 
-In `evaluate_rq2.py`, 
-  
+In `evaluate_rq2.py`,
+
 For installing Enfpoly, see instructions at [Enfpoly's repository](https://bitbucket.org/jshs/monpoly/src/enfpoly/).
 
 For installing WhyMon, see instructions at [WhyMon's repository](https://github.com/runtime-monitoring/whymon/tree/e44aee7bb86df2abfef3aa07482f59de22f7a06b). **Important**: check out commit `e44aee7b` before compiling.
@@ -99,14 +98,14 @@ After running the script, you will find:
   * Figure 13 (App. D) at `out_whymon/summary.png` (after running with `OPTION = WhyMon`);
   * Figure 14 (App. D) at `out_enfpoly/summary.png` (after running with `OPTION = Enfpoly`);
   * Figure 15 (App. D) at `out_whyenf/consent_400000.png`, `out_whyenf/information_1600000.png`, and `out_whyenf/sharing_1600000` (after running with `OPTION = WhyEnf`).
-  
+
 Note that for every experiment performed, the time profile is plotted to `out_{tool}/{formula}_{acceleration}.png`.
-  
+
 ## Step 4. Reproducing the measurements with synthetic traces for RQ3.
 
 Indicative duration: 1-3 hours.
 
-You can run 
+You can run
 ```
 python3 evaluate_rq3.py option [-e EXECUTABLE_PATH] [-g] [-s]
 ```
