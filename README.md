@@ -1,5 +1,7 @@
 # EnfGuard: a proactive real-time first-order enforcer
 
+![EnfGuard logo](EnfGuard.png "EnfGuard")
+
 ## Authors
 
 The EnfGuard enforcer is the successor of the WhyEnf enforcer, which itself shares part of its
