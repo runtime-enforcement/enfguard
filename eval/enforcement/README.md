@@ -30,33 +30,7 @@ Next, run
 # docker run -it enfguard:artifact
 ```
 
-to access the container. In the container, move the binaries of
-the tools to the evaluation folder as follows
-
-```
-$ cp /home/me/monpoly/_build/default/src/main.exe /home/me/enfguard/eval/enforcement
-$ mv /home/me/enfguard/eval/enforcement/main.exe /home/me/enfguard/eval/enforcement/monpoly.exe
-$ cp /home/me/enfpoly/_build/default/src/main.exe /home/me/enfguard/eval/enforcement
-$ mv /home/me/enfguard/eval/enforcement/main.exe /home/me/enfguard/eval/enforcement/enfpoly.exe
-$ cp /home/me/whyenf/bin/whyenf.exe /home/me/enfguard/eval/enforcement
-```
-
-To setup the Python environment, run
-
-```
-$ pip install --no-cache-dir virtualenv
-$ virtualenv env
-$ source env/bin/activate
-```
-
-from `/home/me/enfguard/eval/enforcement`.
-To install the necessary Python dependencies, run
-
-```
-$ pip3 install -r requirements.txt
-```
-
-from `/home/me/enfguard`.
+to access the container.
 
 ## Step 1: Smoke Test
 
