@@ -1,5 +1,7 @@
 # EnfGuard: a proactive real-time first-order enforcer
 
+![EnfGuard logo](EnfGuard.png "EnfGuard")
+
 ## Authors
 
 The EnfGuard enforcer is the successor of the WhyEnf enforcer, which itself shares part of its
@@ -62,3 +64,16 @@ $ dune clean
 ## License
 
 This project and its predecessors WhyEnf and WhyMon are licensed under the GNU Lesser GPL-3.0 license - see [LICENSE](LICENSE) for details.
+
+## Recommended citation
+
+
+    @inproceedings{Hublet2025,
+      author    = {François Hublet and Leonardo Lima and David Basin and Srdjan Krstic and Dmitriy Traytel},
+      title     = {Scaling Up Proactive Enforcement},
+      booktitle = {Proceedings of the 37th International Conference on Computer Aided Verification (CAV)},
+      year      = {2025},
+      publisher = {Springer},
+      address   = {Berlin, Heidelberg}
+    }
+
