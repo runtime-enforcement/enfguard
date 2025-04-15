@@ -4,7 +4,7 @@ run_experiments(
     option        = 'enfguard',
     benchmark     = 'cluster',
     exe           = './enfguard.exe',
-    accelerations = [32],
+    accelerations = [32, 64],
     n             = 1,
     time_unit     = 1,
     func          = True,

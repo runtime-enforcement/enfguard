@@ -14,7 +14,7 @@ run_experiments(
     option        = 'enfguard',
     benchmark     = 'agg',
     exe           = './enfguard.exe',
-    accelerations = [2, 8, 32, 64],
+    accelerations = [2, 4, 8, 16, 32, 64, 128],
     n             = 1,
     time_unit     = 1,
     only_graph    = False,

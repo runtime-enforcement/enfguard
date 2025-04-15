@@ -83,3 +83,4 @@ python3 evaluate_cluster.py   # Cluster
 ```
 to perform the performance measurements for RQ2-3 described in Section 5 and generate the corresponding tables.
 
+*Note*: "Broken pipe" errors are printed in the console when measurements on a script times out (the default timeout duration is 15 minutes). The rest of the evaluation will proceed normally.
