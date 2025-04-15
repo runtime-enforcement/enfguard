@@ -44,6 +44,7 @@ $ cp /home/me/whyenf/bin/whyenf.exe /home/me/enfguard/eval/enforcement
 To setup the Python environment, run
 
 ```
+$ pip install --no-cache-dir virtualenv
 $ virtualenv env
 $ source env/bin/activate
 ```
