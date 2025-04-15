@@ -30,10 +30,18 @@ Next, run
 # docker run -it enfguard:artifact
 ```
 
-to access the container.
+to access the container. In the container, move the binaries of
+the tools to the evaluation folder as follows
 
-In the container, setup the Python environment by running
+```
+$ cp /home/me/monpoly/_build/default/src/main.exe /home/me/enfguard/eval/enforcement
+$ mv /home/me/enfguard/eval/enforcement/main.exe /home/me/enfguard/eval/enforcement/monpoly.exe
+$ cp /home/me/enfpoly/_build/default/src/main.exe /home/me/enfguard/eval/enforcement
+$ mv /home/me/enfguard/eval/enforcement/main.exe /home/me/enfguard/eval/enforcement/enfpoly.exe
+$ cp /home/me/whyenf/bin/whyenf.exe /home/me/enfguard/eval/enforcement
+```
 
+To setup the Python environment, run
 
 ```
 $ virtualenv env
