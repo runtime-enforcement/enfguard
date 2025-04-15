@@ -2,7 +2,10 @@ FROM ubuntu:22.04
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y opam libgmp-dev m4 python3-pip locales nano git
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository -y ppa:deadsnakes/ppa
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y opam libgmp-dev m4 python3.8 python3-pip locales nano git
 
 RUN adduser --disabled-password --gecos "" me
 RUN locale-gen en_US.UTF-8 &&\
