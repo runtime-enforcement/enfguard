@@ -6,7 +6,7 @@ RUN apt-get update && apt-get upgrade -y && \
     add-apt-repository -y ppa:deadsnakes/ppa && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        opam libgmp-dev m4 python3.9 python3-pip python3-dev python3.9-distutils \
+        opam libgmp-dev m4 python3.9 python3-pip python3.9-dev python3.9-distutils \
 	     locales nano git curl autoconf && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
     
