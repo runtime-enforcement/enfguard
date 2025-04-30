@@ -46,17 +46,6 @@ $ python3 evaluate_smoke_test.py
 
 from `/home/me/enfguard/eval/enforcement`.
 
-The output should be of the form
-
-```
-       formula   log          a  avg_latency  max_latency  avg_time  max_time      avg_ev
-0      consent  gdpr  6400000.0     0.961801          4.0  1.043160       4.0  809.516964
-1     deletion  gdpr  6400000.0     0.316199          2.0  0.402594       2.0  809.516964
-2  information  gdpr  6400000.0     0.816553          4.0  0.901179       4.0  809.516964
-3   lawfulness  gdpr  6400000.0     0.833766          2.0  0.908255       3.0  809.516964
-4      sharing  gdpr  6400000.0     0.831408          4.0  0.912500       4.0  809.516964
-```
-with rows corresponding to formulae in the "GDPR" benchmark and columns listing the log's name, acceleration, average and maximum latency, average and maximum time, and average event rate. Figure 14 in the paper contains the `a`, `avg_ev`, `avg_latency`, and `max_latency` columns, respectively.
 
 ## Step 2: Correctness tests
 
