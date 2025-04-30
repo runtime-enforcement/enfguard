@@ -11,6 +11,7 @@ Indicative duration: 30 minutes.
 The configuration used for our experiments was the following:
 
   * Processor: AMD Ryzen™ 5 5600X, with 6 cores and 3.7 GHz
+  * 40 GB of disk space
   * RAM: 16 GB
   * OS: Ubuntu 22.04
   * Python 3.9.5

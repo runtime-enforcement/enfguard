@@ -74,7 +74,7 @@ RUN ln -s ${WDIR}/monpoly/_build/default/src/main.exe monpoly.exe && \
     ln -s ${WDIR}/enfpoly/_build/default/src/main.exe enfpoly.exe && \
     ln -s ${WDIR}/whyenf/_build/default/bin/whyenf.exe whyenf.exe
 
-# Set up virtualenv and install Python dependencies
+# Set up virtualenv and install Python dependencies    
 RUN python3.9 -m pip install virtualenv && \
     python3.9 -m virtualenv venv && \
     . venv/bin/activate && \
