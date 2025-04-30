@@ -98,4 +98,6 @@ option = monpoly, benchmark = gdpr, accelerations = 25600000.0-51200000.0, n = 1
 with columns `formula` (policy), `log`, `a`, `avg_latency` (avg_l), `max_latency` (max_l), `avg_time`,
 `max_time`, and `avg_ev` (avg_er). (In parenthesis we include the corresponding notation in the paper.)
 
-*Note*: "Broken pipe" errors are printed in the console when measurements on a script times out (the default timeout duration is 15 minutes). The rest of the evaluation will proceed normally.
+For example, the excerpt above indicates that the GDPR experiment (`benchmark = gdpr`) has been completed for the tool **MonPoly** (`option = monpoly`).
+
+*Note*: `Broken pipe` errors are printed in the console when measurements on a script times out (the default timeout duration is 15 minutes). The rest of the evaluation will proceed normally.
